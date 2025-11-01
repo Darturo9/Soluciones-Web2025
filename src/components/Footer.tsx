@@ -21,12 +21,12 @@ export default function Footer() {
                         </p>
                     </div>
                     <div>
-                        <h4 className="font-semibold mb-4">Servicios</h4>
+                        <h4 className="font-semibold mb-4">Enlaces</h4>
                         <ul className="space-y-2 text-gray-400">
-                            <li className="hover:text-white transition-colors ">Desarrollo Web</li>
-                            <li className="hover:text-white transition-colors ">E-commerce</li>
-                            <li className="hover:text-white transition-colors ">Automatización</li>
-                            <li className="hover:text-white transition-colors ">Consultoría Tech</li>
+                            <li><a href="/servicios" className="hover:text-white transition-colors">Servicios</a></li>
+                            <li><a href="/proyectos" className="hover:text-white transition-colors">Proyectos</a></li>
+                            <li><a href="/nosotros" className="hover:text-white transition-colors">Nosotros</a></li>
+                            <li><a href="/contacto" className="hover:text-white transition-colors">Contacto</a></li>
                         </ul>
                     </div>
                     <div>

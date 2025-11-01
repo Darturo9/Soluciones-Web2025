@@ -31,6 +31,9 @@ export default function Header() {
                         <a href="/servicios" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
                             Servicios
                         </a>
+                        <a href="/proyectos" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
+                            Proyectos
+                        </a>
                         <a href="/nosotros" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
                             Nosotros
                         </a>
@@ -71,6 +74,9 @@ export default function Header() {
                             </a>
                             <a href="/servicios" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
                                 Servicios
+                            </a>
+                            <a href="/proyectos" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
+                                Proyectos
                             </a>
                             <a href="/nosotros" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
                                 Nosotros
