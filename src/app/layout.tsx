@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   description:
     "Desarrollamos software web personalizado para negocios locales que buscan crecer, automatizar procesos y destacar en el mundo digital.",
   icons: {
-    icon: '/logo.png',
-    shortcut: '/logo.png',
+    icon: '/logo.svg',
+    shortcut: '/logo.svg',
     apple: '/logo.png',
   },
 };
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/logo.png" sizes="any" />
+        <link rel="icon" href="/logo.svg" type="image/svg+xml" />
         <link rel="icon" href="/logo.png" type="image/png" />
         <link rel="apple-touch-icon" href="/logo.png" />
       </head>
