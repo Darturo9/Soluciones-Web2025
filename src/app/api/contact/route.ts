@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     // Configurar el email
     const mailOptions = {
       from: process.env.GMAIL_USER,
-      to: 'solucionesweb2025@gmail.com',
+      to: process.env.CONTACT_EMAIL || process.env.GMAIL_USER,
       subject: `Nuevo contacto desde la web: ${service || 'Consulta general'}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">

@@ -48,14 +48,14 @@ export default function ContactForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-lg">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                Envíanos un mensaje
+        <form onSubmit={handleSubmit} className="bg-gradient-to-br from-gray-900 to-gray-900/50 p-8 rounded-2xl border border-gray-800">
+            <h3 className="text-2xl font-bold text-white mb-6">
+                Envianos un mensaje
             </h3>
 
             {/* Name */}
             <div className="mb-6">
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">
                     Nombre completo *
                 </label>
                 <input
@@ -65,14 +65,14 @@ export default function ContactForm() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-500 transition-colors"
                     placeholder="Tu nombre completo"
                 />
             </div>
 
             {/* Email */}
             <div className="mb-6">
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">
                     Email *
                 </label>
                 <input
@@ -82,15 +82,15 @@ export default function ContactForm() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-500 transition-colors"
                     placeholder="tu@email.com"
                 />
             </div>
 
             {/* Phone */}
             <div className="mb-6">
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Teléfono
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-400 mb-2">
+                    Telefono
                 </label>
                 <input
                     type="tel"
@@ -98,37 +98,36 @@ export default function ContactForm() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-500 transition-colors"
                     placeholder="+(502) 0000-0000"
                 />
             </div>
 
             {/* Service */}
             <div className="mb-6">
-                <label htmlFor="service" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Servicio de interés
+                <label htmlFor="service" className="block text-sm font-medium text-gray-400 mb-2">
+                    Servicio de interes
                 </label>
                 <select
                     id="service"
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white transition-colors"
                 >
                     <option value="">Selecciona un servicio</option>
-                    <option value="Sitio Web Profesional">Sitio Web Profesional</option>
-                    <option value="Tienda Online (E-commerce)">Tienda Online (E-commerce)</option>
-                    <option value="Automatización">Automatización</option>
-                    <option value="Aplicación Móvil">Aplicación Móvil</option>
-                    <option value="Mantenimiento Web">Mantenimiento Web</option>
-                    <option value="Consultoría Digital">Consultoría Digital</option>
+                    <option value="Automatizacion de Procesos">Automatizacion de Procesos</option>
+                    <option value="Sistema a Medida">Sistema a Medida</option>
+                    <option value="APIs e Integraciones">APIs e Integraciones</option>
+                    <option value="IA y Procesamiento de Datos">IA y Procesamiento de Datos</option>
+                    <option value="Consultoria">Consultoria</option>
                     <option value="Otro">Otro</option>
                 </select>
             </div>
 
             {/* Message */}
             <div className="mb-6">
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">
                     Mensaje *
                 </label>
                 <textarea
@@ -138,8 +137,8 @@ export default function ContactForm() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors resize-none"
-                    placeholder="Cuéntanos sobre tu proyecto, objetivos y cualquier detalle importante..."
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-500 transition-colors resize-none"
+                    placeholder="Cuentanos sobre tu proyecto..."
                 />
             </div>
 
@@ -147,24 +146,24 @@ export default function ContactForm() {
             <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-600 to-emerald-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-blue-700 hover:to-emerald-600 transition-all duration-300 shadow-lg transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                className="w-full bg-white text-gray-900 px-8 py-4 rounded-lg text-lg font-medium hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
                 {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
             </button>
 
             {/* Status Messages */}
             {submitStatus === 'success' && (
-                <div className="mt-4 p-4 bg-green-100 dark:bg-green-900/30 border border-green-200 dark:border-green-700 rounded-lg">
-                    <p className="text-green-800 dark:text-green-200 text-center">
-                        ¡Mensaje enviado correctamente! Te contactaremos pronto.
+                <div className="mt-4 p-4 bg-emerald-900/30 border border-emerald-700 rounded-lg">
+                    <p className="text-emerald-300 text-center">
+                        Mensaje enviado. Te contactaremos pronto.
                     </p>
                 </div>
             )}
 
             {submitStatus === 'error' && (
-                <div className="mt-4 p-4 bg-red-100 dark:bg-red-900/30 border border-red-200 dark:border-red-700 rounded-lg">
-                    <p className="text-red-800 dark:text-red-200 text-center">
-                        Error al enviar el mensaje. Por favor intenta de nuevo.
+                <div className="mt-4 p-4 bg-red-900/30 border border-red-700 rounded-lg">
+                    <p className="text-red-300 text-center">
+                        Error al enviar. Por favor intenta de nuevo.
                     </p>
                 </div>
             )}

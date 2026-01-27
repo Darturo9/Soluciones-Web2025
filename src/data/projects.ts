@@ -126,8 +126,8 @@ export const projects: Project[] = [
     slug: 'amoregt',
     title: 'Amoregt',
     client: 'Amoregt',
-    shortDescription: 'Próximamente - Proyecto en desarrollo',
-    description: 'Proyecto actualmente en desarrollo. Pronto revelaremos más detalles sobre esta emocionante colaboración.',
+    shortDescription: 'Proyecto en desarrollo',
+    description: 'Proyecto actualmente en desarrollo. Pronto revelaremos más detalles sobre esta colaboración.',
     category: 'website',
     image: '/amorefoto.png',
     technologies: [
@@ -137,11 +137,10 @@ export const projects: Project[] = [
       'Tailwind CSS'
     ],
     features: [
-      'En desarrollo',
-      'Próximamente más información'
+      'En desarrollo'
     ],
     results: [],
-    link: '#',
+    link: '',
     date: '2025-01',
     year: 2025
   }

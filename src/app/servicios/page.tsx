@@ -2,451 +2,308 @@
 
 export default function Servicios() {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
-            {/* Hero Section */}
-            <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-                <div className="max-w-5xl mx-auto text-center">
-                    <div className="inline-block mb-6 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-full text-blue-600 dark:text-blue-400 text-sm font-semibold">
-                        Paquetes de Desarrollo Web
+        <div className="min-h-screen bg-gray-950">
+            {/* Hero Section - Premium & Elegant */}
+            <section className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+                {/* Subtle gradient background */}
+                <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-950 to-gray-950" />
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent" />
+
+                <div className="max-w-5xl mx-auto text-center relative z-10">
+                    <div className="inline-block mb-6 px-4 py-2 border border-gray-700 rounded-full text-gray-400 text-sm font-medium tracking-wide">
+                        Desarrollo de Software a Medida
                     </div>
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-                        Soluciones Web
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                            {" "}a tu Medida
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+                        Sistemas que
+                        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400">
+                            Transforman Negocios
                         </span>
                     </h1>
-                    <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
-                        Desarrollamos sitios web profesionales con Next.js y Supabase, adaptados a las necesidades de tu negocio con precios accesibles
+                    <p className="text-xl text-gray-400 leading-relaxed max-w-3xl mx-auto">
+                        Automatizaciones inteligentes, integraciones complejas y sistemas personalizados que van más allá de lo que un CMS puede ofrecer
                     </p>
                 </div>
             </section>
 
-            {/* Pricing Packages */}
+            {/* Diferenciador */}
+            <section className="py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-800/50">
+                <div className="max-w-4xl mx-auto text-center">
+                    <p className="text-lg text-gray-500 italic">
+                        &ldquo;No construimos páginas web. Construimos soluciones de software que resuelven problemas reales de negocio.&rdquo;
+                    </p>
+                </div>
+            </section>
+
+            {/* Servicios Principales */}
             <section className="py-20 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-                        {/* PAQUETE BÁSICO */}
-                        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-300 hover:-translate-y-2">
-                            <div className="bg-gradient-to-br from-blue-500 to-blue-600 px-8 py-6 text-white">
-                                <h3 className="text-2xl font-bold mb-2">Paquete Básico</h3>
-                                <p className="text-blue-100 text-sm">Ideal para negocios que inician</p>
-                                <div className="mt-6">
-                                    <span className="text-5xl font-bold">Q2,500</span>
-                                    <span className="text-blue-100 ml-2">único pago</span>
-                                </div>
+                        {/* Automatizaciones */}
+                        <div className="group bg-gradient-to-br from-gray-900 to-gray-900/50 rounded-2xl p-10 border border-gray-800 hover:border-blue-500/50 transition-all duration-500">
+                            <div className="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-8 group-hover:bg-blue-500/20 transition-colors">
+                                <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                                </svg>
                             </div>
-
-                            <div className="p-8">
-                                <div className="mb-6">
-                                    <h4 className="font-semibold text-gray-900 dark:text-white mb-3 text-sm uppercase tracking-wide">Perfecto para:</h4>
-                                    <p className="text-gray-600 dark:text-gray-300 text-sm">
-                                        Restaurantes, cafeterías, negocios locales, servicios profesionales
-                                    </p>
-                                </div>
-
-                                <ul className="space-y-4 mb-8">
-                                    <li className="flex items-start">
-                                        <span className="text-blue-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">Hasta 5 páginas (Inicio, Servicios, Nosotros, Contacto, etc.)</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-blue-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">Diseño responsive (móvil, tablet, desktop)</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-blue-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">Formulario de contacto funcional</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-blue-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">Integración con WhatsApp y redes sociales</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-blue-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">SEO básico optimizado</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-blue-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">Optimización de velocidad</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-blue-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">Hosting gratis para siempre en Vercel</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-blue-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">Dominio .com gratis primer año</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-blue-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">1 mes de soporte técnico</span>
-                                    </li>
-                                </ul>
-
-                                <div className="pt-6 border-t border-gray-200 dark:border-gray-700">
-                                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                                        <span className="font-semibold">Tiempo de entrega:</span> 7-10 días
-                                    </p>
-                                    <a
-                                        href="/contacto"
-                                        className="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
-                                    >
-                                        Solicitar Paquete
-                                    </a>
-                                </div>
-                            </div>
+                            <h3 className="text-2xl font-semibold text-white mb-4">Automatización de Procesos</h3>
+                            <p className="text-gray-400 mb-8 leading-relaxed">
+                                Eliminamos tareas repetitivas y conectamos tus herramientas para que trabajen en sincronía. Desde flujos de trabajo internos hasta integraciones con APIs externas.
+                            </p>
+                            <ul className="space-y-4 text-gray-300">
+                                <li className="flex items-start">
+                                    <span className="text-blue-400 mr-3 mt-1">—</span>
+                                    Workflows automatizados con n8n y Make
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-blue-400 mr-3 mt-1">—</span>
+                                    Integración con CRMs, ERPs y herramientas de productividad
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-blue-400 mr-3 mt-1">—</span>
+                                    Bots y notificaciones inteligentes
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-blue-400 mr-3 mt-1">—</span>
+                                    Sincronización de datos entre plataformas
+                                </li>
+                            </ul>
                         </div>
 
-                        {/* PAQUETE PROFESIONAL - DESTACADO */}
-                        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden border-4 border-purple-500 relative transform lg:scale-105 z-10">
-                            <div className="absolute top-0 right-0 bg-purple-500 text-white px-6 py-2 text-sm font-bold rounded-bl-lg">
-                                MÁS POPULAR
+                        {/* Sistemas a Medida */}
+                        <div className="group bg-gradient-to-br from-gray-900 to-gray-900/50 rounded-2xl p-10 border border-gray-800 hover:border-purple-500/50 transition-all duration-500">
+                            <div className="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-8 group-hover:bg-purple-500/20 transition-colors">
+                                <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                                </svg>
                             </div>
-                            <div className="bg-gradient-to-br from-purple-600 to-purple-700 px-8 py-6 text-white">
-                                <h3 className="text-2xl font-bold mb-2">Paquete Profesional</h3>
-                                <p className="text-purple-100 text-sm">Ideal para negocios en crecimiento</p>
-                                <div className="mt-6">
-                                    <span className="text-5xl font-bold">Q4,500</span>
-                                    <span className="text-purple-100 ml-2">único pago</span>
-                                </div>
-                            </div>
-
-                            <div className="p-8">
-                                <div className="mb-6">
-                                    <h4 className="font-semibold text-gray-900 dark:text-white mb-3 text-sm uppercase tracking-wide">Perfecto para:</h4>
-                                    <p className="text-gray-600 dark:text-gray-300 text-sm">
-                                        E-commerce pequeño, empresas de servicios, portafolios profesionales
-                                    </p>
-                                </div>
-
-                                <ul className="space-y-4 mb-8">
-                                    <li className="flex items-start">
-                                        <span className="text-purple-500 mr-3 mt-1 flex-shrink-0 font-bold">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300 font-medium">Todo lo del Paquete Básico +</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-purple-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">Hasta 10 páginas personalizadas</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-purple-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">Panel de administración con Supabase</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-purple-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">Base de datos integrada</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-purple-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">Sistema de blog o catálogo de productos</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-purple-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">Autenticación de usuarios básica</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-purple-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">Galería de imágenes optimizada</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-purple-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">SEO avanzado</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-purple-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">Google Analytics integrado</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-purple-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">Múltiples formularios personalizados</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-purple-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">3 meses de soporte técnico</span>
-                                    </li>
-                                </ul>
-
-                                <div className="pt-6 border-t border-gray-200 dark:border-gray-700">
-                                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                                        <span className="font-semibold">Tiempo de entrega:</span> 15-20 días
-                                    </p>
-                                    <a
-                                        href="/contacto"
-                                        className="block w-full text-center bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors shadow-lg"
-                                    >
-                                        Solicitar Paquete
-                                    </a>
-                                </div>
-                            </div>
+                            <h3 className="text-2xl font-semibold text-white mb-4">Sistemas a Medida</h3>
+                            <p className="text-gray-400 mb-8 leading-relaxed">
+                                Aplicaciones web diseñadas específicamente para tu operación. Nada de plantillas ni limitaciones de plugins.
+                            </p>
+                            <ul className="space-y-4 text-gray-300">
+                                <li className="flex items-start">
+                                    <span className="text-purple-400 mr-3 mt-1">—</span>
+                                    Paneles de control y dashboards
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-purple-400 mr-3 mt-1">—</span>
+                                    Sistemas de gestión internos
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-purple-400 mr-3 mt-1">—</span>
+                                    Portales para clientes y proveedores
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-purple-400 mr-3 mt-1">—</span>
+                                    Herramientas de reportería y analytics
+                                </li>
+                            </ul>
                         </div>
 
-                        {/* PAQUETE PREMIUM */}
-                        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden border-2 border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-300 hover:-translate-y-2">
-                            <div className="bg-gradient-to-br from-emerald-500 to-emerald-600 px-8 py-6 text-white">
-                                <h3 className="text-2xl font-bold mb-2">Paquete Premium</h3>
-                                <p className="text-emerald-100 text-sm">Para negocios establecidos</p>
-                                <div className="mt-6">
-                                    <span className="text-5xl font-bold">Q7,500</span>
-                                    <span className="text-emerald-100 ml-2">único pago</span>
-                                </div>
+                        {/* Integraciones */}
+                        <div className="group bg-gradient-to-br from-gray-900 to-gray-900/50 rounded-2xl p-10 border border-gray-800 hover:border-emerald-500/50 transition-all duration-500">
+                            <div className="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-8 group-hover:bg-emerald-500/20 transition-colors">
+                                <svg className="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
                             </div>
-
-                            <div className="p-8">
-                                <div className="mb-6">
-                                    <h4 className="font-semibold text-gray-900 dark:text-white mb-3 text-sm uppercase tracking-wide">Perfecto para:</h4>
-                                    <p className="text-gray-600 dark:text-gray-300 text-sm">
-                                        E-commerce completo, plataformas empresariales, sistemas personalizados
-                                    </p>
-                                </div>
-
-                                <ul className="space-y-4 mb-8">
-                                    <li className="flex items-start">
-                                        <span className="text-emerald-500 mr-3 mt-1 flex-shrink-0 font-bold">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300 font-medium">Todo lo del Paquete Profesional +</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-emerald-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">Páginas ilimitadas</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-emerald-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">E-commerce completo con carrito de compras</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-emerald-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">Pasarela de pagos (Stripe/PayPal)</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-emerald-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">Sistema de gestión de inventario</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-emerald-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">Panel administrativo avanzado</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-emerald-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">Sistema de usuarios y roles</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-emerald-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">Notificaciones por email automatizadas</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-emerald-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">Reportes y analytics personalizados</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-emerald-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">API personalizada</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-emerald-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">Capacitación personalizada del sistema</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-emerald-500 mr-3 mt-1 flex-shrink-0">✓</span>
-                                        <span className="text-gray-700 dark:text-gray-300">6 meses de soporte técnico premium</span>
-                                    </li>
-                                </ul>
-
-                                <div className="pt-6 border-t border-gray-200 dark:border-gray-700">
-                                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                                        <span className="font-semibold">Tiempo de entrega:</span> 25-30 días
-                                    </p>
-                                    <a
-                                        href="/contacto"
-                                        className="block w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
-                                    >
-                                        Solicitar Paquete
-                                    </a>
-                                </div>
-                            </div>
+                            <h3 className="text-2xl font-semibold text-white mb-4">APIs e Integraciones</h3>
+                            <p className="text-gray-400 mb-8 leading-relaxed">
+                                Conectamos sistemas que no fueron diseñados para hablar entre sí. Creamos puentes de datos seguros y eficientes.
+                            </p>
+                            <ul className="space-y-4 text-gray-300">
+                                <li className="flex items-start">
+                                    <span className="text-emerald-400 mr-3 mt-1">—</span>
+                                    Desarrollo de APIs RESTful y GraphQL
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-emerald-400 mr-3 mt-1">—</span>
+                                    Webhooks y eventos en tiempo real
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-emerald-400 mr-3 mt-1">—</span>
+                                    Integraciones con pasarelas de pago
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-emerald-400 mr-3 mt-1">—</span>
+                                    Conexión con servicios de terceros
+                                </li>
+                            </ul>
                         </div>
-                    </div>
 
-                    {/* Nota de personalización */}
-                    <div className="mt-12 text-center">
-                        <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                            ¿Necesitas algo diferente? Todos nuestros paquetes pueden personalizarse según tus necesidades específicas.
-                            <a href="/contacto" className="text-blue-600 dark:text-blue-400 font-semibold ml-1 hover:underline">
-                                Contáctanos para una cotización personalizada
-                            </a>
-                        </p>
+                        {/* IA y Datos */}
+                        <div className="group bg-gradient-to-br from-gray-900 to-gray-900/50 rounded-2xl p-10 border border-gray-800 hover:border-amber-500/50 transition-all duration-500">
+                            <div className="w-12 h-12 bg-amber-500/10 rounded-lg flex items-center justify-center mb-8 group-hover:bg-amber-500/20 transition-colors">
+                                <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                </svg>
+                            </div>
+                            <h3 className="text-2xl font-semibold text-white mb-4">IA y Procesamiento de Datos</h3>
+                            <p className="text-gray-400 mb-8 leading-relaxed">
+                                Implementamos soluciones con inteligencia artificial para automatizar decisiones y extraer valor de tus datos.
+                            </p>
+                            <ul className="space-y-4 text-gray-300">
+                                <li className="flex items-start">
+                                    <span className="text-amber-400 mr-3 mt-1">—</span>
+                                    Chatbots y asistentes con IA
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-amber-400 mr-3 mt-1">—</span>
+                                    Procesamiento automático de documentos
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-amber-400 mr-3 mt-1">—</span>
+                                    Análisis predictivo y reportes inteligentes
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-amber-400 mr-3 mt-1">—</span>
+                                    Integración con OpenAI, Claude y más
+                                </li>
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
             </section>
 
-            {/* Características Técnicas */}
-            <section className="py-20 bg-white dark:bg-gray-900">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                            Tecnología de Vanguardia
-                        </h2>
-                        <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                            Todos nuestros paquetes incluyen las mejores tecnologías del mercado
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div className="text-center p-6 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 rounded-xl">
-                            <div className="text-4xl mb-4">⚡</div>
-                            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Next.js 15</h3>
-                            <p className="text-gray-600 dark:text-gray-300 text-sm">
-                                Framework React de última generación para máximo rendimiento
-                            </p>
-                        </div>
-
-                        <div className="text-center p-6 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 rounded-xl">
-                            <div className="text-4xl mb-4">🗄️</div>
-                            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Supabase</h3>
-                            <p className="text-gray-600 dark:text-gray-300 text-sm">
-                                Base de datos PostgreSQL escalable y segura
-                            </p>
-                        </div>
-
-                        <div className="text-center p-6 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 rounded-xl">
-                            <div className="text-4xl mb-4">🎨</div>
-                            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Tailwind CSS</h3>
-                            <p className="text-gray-600 dark:text-gray-300 text-sm">
-                                Diseños modernos y totalmente personalizables
-                            </p>
-                        </div>
-
-                        <div className="text-center p-6 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 rounded-xl">
-                            <div className="text-4xl mb-4">🚀</div>
-                            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Vercel</h3>
-                            <p className="text-gray-600 dark:text-gray-300 text-sm">
-                                Hosting ultra rápido con SSL y CDN global incluido
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Garantías y Beneficios */}
-            <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-800 dark:to-gray-900">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                            Nuestras Garantías
-                        </h2>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg text-center">
-                            <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-4 mx-auto">
-                                <span className="text-3xl">💯</span>
-                            </div>
-                            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                                Satisfacción Garantizada
-                            </h3>
-                            <p className="text-gray-600 dark:text-gray-300">
-                                Revisiones ilimitadas hasta que estés 100% satisfecho con el resultado
-                            </p>
-                        </div>
-
-                        <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg text-center">
-                            <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center mb-4 mx-auto">
-                                <span className="text-3xl">⚡</span>
-                            </div>
-                            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                                Entrega a Tiempo
-                            </h3>
-                            <p className="text-gray-600 dark:text-gray-300">
-                                Cumplimos con los plazos establecidos o te devolvemos tu dinero
-                            </p>
-                        </div>
-
-                        <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg text-center">
-                            <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mb-4 mx-auto">
-                                <span className="text-3xl">🔒</span>
-                            </div>
-                            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                                Código de Calidad
-                            </h3>
-                            <p className="text-gray-600 dark:text-gray-300">
-                                Código limpio, documentado y fácil de mantener para el futuro
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* FAQ Section */}
-            <section className="py-20 bg-white dark:bg-gray-900">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                            Preguntas Frecuentes
-                        </h2>
-                    </div>
-
-                    <div className="space-y-6">
-                        <div className="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 p-6 rounded-xl">
-                            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-                                ¿Qué incluye el hosting gratis?
-                            </h3>
-                            <p className="text-gray-600 dark:text-gray-300">
-                                Todos los paquetes incluyen hosting en Vercel completamente gratis el primer año, con SSL, CDN global y despliegues ilimitados. No hay costos ocultos.
-                            </p>
-                        </div>
-
-                        <div className="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 p-6 rounded-xl">
-                            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-                                ¿Puedo solicitar cambios después de la entrega?
-                            </h3>
-                            <p className="text-gray-600 dark:text-gray-300">
-                                Sí, durante el período de soporte técnico incluido en tu paquete puedes solicitar ajustes y correcciones sin costo adicional.
-                            </p>
-                        </div>
-
-                        <div className="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 p-6 rounded-xl">
-                            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-                                ¿Qué pasa después del período de soporte?
-                            </h3>
-                            <p className="text-gray-600 dark:text-gray-300">
-                                Puedes contratar un plan de mantenimiento mensual desde Q250 que incluye actualizaciones, soporte técnico y mejoras continuas.
-                            </p>
-                        </div>
-
-                        <div className="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 p-6 rounded-xl">
-                            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-                                ¿Ofrecen opciones de pago?
-                            </h3>
-                            <p className="text-gray-600 dark:text-gray-300">
-                                Sí, aceptamos pagos en 2-3 cuotas sin intereses. 50% al iniciar, 50% al entregar (o dividido en 3 pagos para el paquete Premium).
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Call to Action Final */}
-            <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 text-white">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-                        ¿Listo para llevar tu negocio al siguiente nivel?
+            {/* Por qué no WordPress */}
+            <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50 border-y border-gray-800/50">
+                <div className="max-w-4xl mx-auto">
+                    <h2 className="text-3xl font-bold text-white mb-12 text-center">
+                        ¿Por qué código personalizado?
                     </h2>
-                    <p className="text-xl text-blue-100 mb-8">
-                        Obtén una consulta gratuita y descubre cuál paquete es perfecto para ti
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a
-                            href="/contacto"
-                            className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
-                        >
-                            Consulta Gratuita
-                        </a>
-                        <a
-                            href="/proyectos"
-                            className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300"
-                        >
-                            Ver Proyectos Realizados
-                        </a>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="space-y-6">
+                            <h3 className="text-lg font-medium text-gray-300 flex items-center">
+                                <span className="w-8 h-8 rounded-full bg-red-500/10 text-red-400 flex items-center justify-center mr-3 text-sm">✕</span>
+                                Lo que NO hacemos
+                            </h3>
+                            <ul className="space-y-4 text-gray-500">
+                                <li className="flex items-start">
+                                    <span className="mr-3">—</span>
+                                    Sitios web genéricos con plantillas
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="mr-3">—</span>
+                                    Landing pages que cualquiera puede hacer
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="mr-3">—</span>
+                                    WordPress con 50 plugins
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="mr-3">—</span>
+                                    Soluciones limitadas por el CMS
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className="space-y-6">
+                            <h3 className="text-lg font-medium text-gray-300 flex items-center">
+                                <span className="w-8 h-8 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center mr-3 text-sm">✓</span>
+                                Lo que SÍ hacemos
+                            </h3>
+                            <ul className="space-y-4 text-gray-300">
+                                <li className="flex items-start">
+                                    <span className="mr-3">—</span>
+                                    Software que se adapta a tu proceso, no al revés
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="mr-3">—</span>
+                                    Integraciones que antes eran imposibles
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="mr-3">—</span>
+                                    Automatizaciones que ahorran horas de trabajo
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="mr-3">—</span>
+                                    Sistemas escalables sin límites artificiales
+                                </li>
+                            </ul>
+                        </div>
                     </div>
+                </div>
+            </section>
+
+            {/* Stack Tecnológico */}
+            <section className="py-20 px-4 sm:px-6 lg:px-8">
+                <div className="max-w-5xl mx-auto">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl font-bold text-white mb-4">
+                            Stack Tecnológico
+                        </h2>
+                        <p className="text-gray-400">
+                            Herramientas modernas para soluciones robustas
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        {[
+                            { name: 'Next.js', desc: 'Framework React' },
+                            { name: 'TypeScript', desc: 'Tipado seguro' },
+                            { name: 'Supabase', desc: 'Backend & Auth' },
+                            { name: 'PostgreSQL', desc: 'Base de datos' },
+                            { name: 'n8n', desc: 'Automatizaciones' },
+                            { name: 'OpenAI', desc: 'Inteligencia Artificial' },
+                            { name: 'Vercel', desc: 'Infraestructura' },
+                            { name: 'Stripe', desc: 'Pagos' },
+                        ].map((tech) => (
+                            <div key={tech.name} className="text-center p-6 rounded-xl bg-gray-900/50 border border-gray-800/50">
+                                <h3 className="text-white font-medium mb-1">{tech.name}</h3>
+                                <p className="text-gray-500 text-sm">{tech.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Proceso de Trabajo */}
+            <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
+                <div className="max-w-5xl mx-auto">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl font-bold text-white mb-4">
+                            Cómo Trabajamos
+                        </h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                        {[
+                            { num: '01', title: 'Descubrimiento', desc: 'Entendemos tu operación, puntos de dolor y objetivos' },
+                            { num: '02', title: 'Diseño', desc: 'Arquitectura técnica y propuesta de solución' },
+                            { num: '03', title: 'Desarrollo', desc: 'Construcción iterativa con entregas parciales' },
+                            { num: '04', title: 'Evolución', desc: 'Soporte continuo y mejoras basadas en uso real' },
+                        ].map((step) => (
+                            <div key={step.num} className="relative">
+                                <span className="text-5xl font-bold text-gray-800">{step.num}</span>
+                                <h3 className="text-lg font-semibold text-white mt-4 mb-2">{step.title}</h3>
+                                <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA Final */}
+            <section className="py-24 px-4 sm:px-6 lg:px-8 border-t border-gray-800/50">
+                <div className="max-w-3xl mx-auto text-center">
+                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+                        ¿Tienes un proceso que necesita automatizarse?
+                    </h2>
+                    <p className="text-xl text-gray-400 mb-10">
+                        Conversemos sobre cómo podemos optimizar tu operación con software a medida
+                    </p>
+                    <a
+                        href="/contacto"
+                        className="inline-flex items-center px-8 py-4 bg-white text-gray-900 rounded-lg text-lg font-medium hover:bg-gray-100 transition-colors"
+                    >
+                        Agendar Consulta
+                        <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
                 </div>
             </section>
         </div>
