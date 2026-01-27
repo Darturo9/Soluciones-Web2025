@@ -16,7 +16,9 @@
       "Bash(git stash:*)",
       "Bash(git commit -m \"$\\(cat <<''EOF''\nAgregar 3 articulos nuevos al blog\n\n- Chatbots con IA para negocios\n- APIs: que son y por que importan\n- 5 errores comunes al digitalizar tu negocio\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
       "Bash(npm uninstall:*)",
-      "Bash(git commit -m \"$\\(cat <<''EOF''\nDowngrade a Tailwind v3 para compatibilidad con Vercel\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nDowngrade a Tailwind v3 para compatibilidad con Vercel\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAgregar script vercel-build que limpia cache antes de build\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []

@@ -50,6 +50,53 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Soluciones Web',
+  url: 'https://soluciones-web.vercel.app',
+  logo: 'https://soluciones-web.vercel.app/logo.png',
+  description: 'Desarrollo de sistemas a medida, automatizaciones e integraciones para empresas.',
+  address: {
+    '@type': 'PostalAddress',
+    addressCountry: 'GT',
+  },
+  sameAs: [
+    'https://www.tiktok.com/@solucionesweb2025',
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer service',
+    availableLanguage: ['Spanish'],
+  },
+  offers: {
+    '@type': 'AggregateOffer',
+    offerCount: 4,
+    itemOffered: [
+      {
+        '@type': 'Service',
+        name: 'Automatizacion de Procesos',
+        description: 'Elimina tareas repetitivas y reduce errores humanos con flujos de trabajo automatizados.',
+      },
+      {
+        '@type': 'Service',
+        name: 'Sistemas a Medida',
+        description: 'Aplicaciones web y moviles disenadas especificamente para las necesidades de tu negocio.',
+      },
+      {
+        '@type': 'Service',
+        name: 'APIs e Integraciones',
+        description: 'Conecta tus sistemas existentes y crea flujos de datos entre plataformas.',
+      },
+      {
+        '@type': 'Service',
+        name: 'IA y Procesamiento de Datos',
+        description: 'Chatbots inteligentes, analisis de datos y automatizaciones con inteligencia artificial.',
+      },
+    ],
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -61,6 +108,10 @@ export default function RootLayout({
         <link rel="icon" href="/logo.svg" type="image/svg+xml" />
         <link rel="icon" href="/logo.png" type="image/png" />
         <link rel="apple-touch-icon" href="/logo.png" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body className={`${inter.className} antialiased bg-white dark:bg-gray-900 transition-colors duration-300`}>
         <Header />
