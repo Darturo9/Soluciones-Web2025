@@ -4,8 +4,10 @@ import { useEffect } from 'react';
 
 // IDs de tus videos de TikTok - actualiza estos con tus videos reales
 const tiktokVideos: string[] = [
-  // Agrega aqui los IDs de tus videos de TikTok
-  // Ejemplo: '7123456789012345678'
+  '7582832885946649868',
+  '7582447543125036300',
+  '7582080454707121464',
+  '7581723746944240907',
 ];
 
 export default function ContenidoPage() {
