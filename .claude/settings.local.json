@@ -5,7 +5,18 @@
       "Read(//Users/danilo/Documents/**)",
       "Bash(npm run dev)",
       "Bash(npm run build:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(tree:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nRediseno completo: tema oscuro premium y enfoque en sistemas/automatizaciones\n\n- Nuevo enfoque de negocio: sistemas a medida, automatizaciones, APIs e IA\n- Tema oscuro elegante en todas las paginas\n- Sin emojis, iconos SVG minimalistas\n- SEO mejorado con metadatos completos y robots.txt\n- Email destino configurable via variable de entorno\n- Accesibilidad mejorada en menu movil\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push)",
+      "Bash(npm install:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAgregar blog y seccion de videos\n\n- Blog con sistema markdown \\(sin CMS\\)\n- 2 posts de ejemplo sobre automatizacion y WordPress\n- Pagina de contenido para videos de TikTok @solucionesweb2025\n- Navegacion actualizada con Blog y Videos\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAgregar 3 articulos nuevos al blog\n\n- Chatbots con IA para negocios\n- APIs: que son y por que importan\n- 5 errores comunes al digitalizar tu negocio\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(npm uninstall:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nDowngrade a Tailwind v3 para compatibilidad con Vercel\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
     ],
     "deny": [],
     "ask": []
