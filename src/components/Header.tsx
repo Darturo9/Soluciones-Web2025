@@ -24,7 +24,7 @@ export default function Header() {
                     </a>
 
                     {/* Desktop Menu */}
-                    <nav className="hidden md:flex space-x-8">
+                    <nav className="hidden md:flex space-x-6">
                         <a href="/" className="text-gray-400 hover:text-white transition-colors font-medium">
                             Inicio
                         </a>
@@ -34,8 +34,11 @@ export default function Header() {
                         <a href="/proyectos" className="text-gray-400 hover:text-white transition-colors font-medium">
                             Proyectos
                         </a>
-                        <a href="/nosotros" className="text-gray-400 hover:text-white transition-colors font-medium">
-                            Nosotros
+                        <a href="/blog" className="text-gray-400 hover:text-white transition-colors font-medium">
+                            Blog
+                        </a>
+                        <a href="/contenido" className="text-gray-400 hover:text-white transition-colors font-medium">
+                            Videos
                         </a>
                         <a href="/contacto" className="text-gray-400 hover:text-white transition-colors font-medium">
                             Contacto
@@ -80,8 +83,11 @@ export default function Header() {
                             <a href="/proyectos" className="text-gray-400 hover:text-white transition-colors font-medium">
                                 Proyectos
                             </a>
-                            <a href="/nosotros" className="text-gray-400 hover:text-white transition-colors font-medium">
-                                Nosotros
+                            <a href="/blog" className="text-gray-400 hover:text-white transition-colors font-medium">
+                                Blog
+                            </a>
+                            <a href="/contenido" className="text-gray-400 hover:text-white transition-colors font-medium">
+                                Videos
                             </a>
                             <a href="/contacto" className="text-gray-400 hover:text-white transition-colors font-medium">
                                 Contacto
