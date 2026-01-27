@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { getAllSlugs } from '@/lib/blog'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://soluciones-web.vercel.app'
+  const baseUrl = 'https://www.solucionesweb-2025.com'
 
   const blogSlugs = getAllSlugs()
   const blogUrls = blogSlugs.map((slug) => ({

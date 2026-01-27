@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Soluciones Web" }],
   creator: "Soluciones Web",
-  metadataBase: new URL("https://soluciones-web.vercel.app"),
+  metadataBase: new URL("https://www.solucionesweb-2025.com"),
   openGraph: {
     type: "website",
     locale: "es_GT",
@@ -54,8 +54,8 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Soluciones Web',
-  url: 'https://soluciones-web.vercel.app',
-  logo: 'https://soluciones-web.vercel.app/logo.png',
+  url: 'https://www.solucionesweb-2025.com',
+  logo: 'https://www.solucionesweb-2025.com/logo.png',
   description: 'Desarrollo de sistemas a medida, automatizaciones e integraciones para empresas.',
   address: {
     '@type': 'PostalAddress',

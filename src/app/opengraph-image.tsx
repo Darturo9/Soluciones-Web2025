@@ -64,7 +64,7 @@ export default async function Image() {
               fontSize: 24,
             }}
           >
-            soluciones-web.vercel.app
+            solucionesweb-2025.com
           </div>
         </div>
       </div>
