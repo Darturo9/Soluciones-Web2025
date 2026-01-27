@@ -34,9 +34,9 @@ export default function Nosotros() {
                             </h2>
                             <div className="space-y-4 text-gray-400">
                                 <p className="leading-relaxed">
-                                    <span className="text-white font-medium">Soluciones Web</span> nacio en 2025
-                                    con una vision clara: ofrecer desarrollo de software de alta calidad
-                                    para negocios que necesitan mas que una simple pagina web.
+                                    <span className="text-white font-medium">Soluciones Web</span> nace para modernizar
+                                    negocios locales con el stack tecnologico mas actual. Utilizamos las mismas
+                                    herramientas que usan las startups mas exitosas del mundo.
                                 </p>
                                 <p className="leading-relaxed">
                                     Nos especializamos en crear sistemas a medida, automatizaciones
@@ -51,8 +51,8 @@ export default function Nosotros() {
                         <div className="bg-gradient-to-br from-gray-900 to-gray-900/50 rounded-2xl p-10 border border-gray-800">
                             <div className="space-y-6">
                                 <div>
-                                    <div className="text-4xl font-bold text-white mb-1">2025</div>
-                                    <div className="text-gray-500">Ano de fundacion</div>
+                                    <div className="text-4xl font-bold text-white mb-1">Next.js</div>
+                                    <div className="text-gray-500">Stack moderno</div>
                                 </div>
                                 <div className="border-t border-gray-800 pt-6">
                                     <div className="text-4xl font-bold text-white mb-1">Guatemala</div>
