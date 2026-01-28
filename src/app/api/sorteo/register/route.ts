@@ -58,14 +58,14 @@ export async function POST(request: NextRequest) {
     }
     rateLimitMap.set(ip, now)
 
-    const { nombre, email, telefono, nombreNegocio, presupuesto, website } = await request.json()
+    const { nombre, email, telefono, nombreNegocio, presupuesto, website, acceptedTerms } = await request.json()
 
     // Honeypot check - if filled, it's a bot
     if (website) {
       return NextResponse.json({ success: true, id: 'fake-id' })
     }
 
-    if (!nombre || !email || !telefono || !nombreNegocio || !presupuesto) {
+    if (!nombre || !email || !telefono || !nombreNegocio || !presupuesto || !acceptedTerms) {
       return NextResponse.json(
         { error: 'Todos los campos son requeridos' },
         { status: 400 }
@@ -80,6 +80,7 @@ export async function POST(request: NextRequest) {
         telefono,
         nombre_negocio: nombreNegocio,
         presupuesto_cliente: presupuesto,
+        acepto_terminos: true,
       })
       .select()
       .single()

@@ -22,6 +22,7 @@ export default function SorteoPage() {
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [fieldErrors, setFieldErrors] = useState<{ [key: string]: string }>({})
   const [acceptedTerms, setAcceptedTerms] = useState(false)
   const [finalized, setFinalized] = useState(false)
   const [finalizing, setFinalizing] = useState(false)
@@ -35,22 +36,132 @@ export default function SorteoPage() {
     }
   }, [messages])
 
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return emailRegex.test(email) && email.length <= 100
+  }
+
+  const validatePhone = (phone: string): boolean => {
+    // Acepta formatos: +1234567890, 123-456-7890, (123) 456-7890, 1234567890
+    const phoneRegex = /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,4}[-\s\.]?[0-9]{1,9}$/
+    const cleanPhone = phone.replace(/[\s\-\(\)\.]/g, '')
+    return cleanPhone.length >= 7 && cleanPhone.length <= 15 && phoneRegex.test(phone)
+  }
+
+  const validateName = (name: string): boolean => {
+    // Permite letras (incluyendo tildes y ñ), espacios y guiones
+    const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s\-']+$/
+    return nameRegex.test(name) && name.length >= 2 && name.length <= 100
+  }
+
+  const validateBusinessName = (name: string): boolean => {
+    // Permite letras, números, espacios y algunos caracteres especiales comunes en nombres de negocio
+    const businessRegex = /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\s\-&'.,:]+$/
+    return businessRegex.test(name) && name.length >= 2 && name.length <= 150
+  }
+
+  const sanitizeInput = (input: string): string => {
+    // Elimina caracteres potencialmente peligrosos para prevenir XSS
+    return input.trim().replace(/[<>\"']/g, '')
+  }
+
+  const validateForm = (): boolean => {
+    const errors: { [key: string]: string } = {}
+
+    // Validar nombre
+    const sanitizedNombre = sanitizeInput(formData.nombre)
+    if (!sanitizedNombre) {
+      errors.nombre = 'El nombre es requerido'
+    } else if (sanitizedNombre.length < 2) {
+      errors.nombre = 'El nombre debe tener al menos 2 caracteres'
+    } else if (sanitizedNombre.length > 100) {
+      errors.nombre = 'El nombre no puede exceder 100 caracteres'
+    } else if (!validateName(sanitizedNombre)) {
+      errors.nombre = 'El nombre solo puede contener letras, espacios y guiones'
+    }
+
+    // Validar email
+    const sanitizedEmail = sanitizeInput(formData.email)
+    if (!sanitizedEmail) {
+      errors.email = 'El email es requerido'
+    } else if (!validateEmail(sanitizedEmail)) {
+      errors.email = 'Ingresa un email válido (ej: tu@email.com)'
+    } else if (sanitizedEmail.length > 100) {
+      errors.email = 'El email no puede exceder 100 caracteres'
+    }
+
+    // Validar teléfono
+    const sanitizedTelefono = sanitizeInput(formData.telefono)
+    if (!sanitizedTelefono) {
+      errors.telefono = 'El teléfono es requerido'
+    } else if (!validatePhone(sanitizedTelefono)) {
+      errors.telefono = 'Ingresa un teléfono válido (ej: +1 234 567 8900)'
+    }
+
+    // Validar nombre del negocio
+    const sanitizedNegocio = sanitizeInput(formData.nombreNegocio)
+    if (!sanitizedNegocio) {
+      errors.nombreNegocio = 'El nombre del negocio es requerido'
+    } else if (sanitizedNegocio.length < 2) {
+      errors.nombreNegocio = 'El nombre del negocio debe tener al menos 2 caracteres'
+    } else if (sanitizedNegocio.length > 150) {
+      errors.nombreNegocio = 'El nombre del negocio no puede exceder 150 caracteres'
+    } else if (!validateBusinessName(sanitizedNegocio)) {
+      errors.nombreNegocio = 'El nombre del negocio contiene caracteres no permitidos'
+    }
+
+    // Validar presupuesto
+    if (!formData.presupuesto) {
+      errors.presupuesto = 'Selecciona un rango de presupuesto'
+    }
+
+    // Validar términos
+    if (!acceptedTerms) {
+      errors.terminos = 'Debes aceptar los términos y condiciones'
+    }
+
+    // Validar honeypot (anti-bot)
+    if (formData.website) {
+      errors.bot = 'Registro sospechoso detectado'
+    }
+
+    setFieldErrors(errors)
+    return Object.keys(errors).length === 0
+  }
+
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault()
-    setLoading(true)
     setError('')
+    setFieldErrors({})
+
+    if (!validateForm()) {
+      return
+    }
+
+    setLoading(true)
 
     try {
+      // Sanitizar datos antes de enviar
+      const sanitizedData = {
+        nombre: sanitizeInput(formData.nombre),
+        email: sanitizeInput(formData.email),
+        telefono: sanitizeInput(formData.telefono),
+        nombreNegocio: sanitizeInput(formData.nombreNegocio),
+        presupuesto: formData.presupuesto,
+        website: formData.website,
+        acceptedTerms,
+      }
+
       const res = await fetch('/api/sorteo/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(sanitizedData),
       })
 
       const data = await res.json()
 
       if (!res.ok) {
-        setError(data.error)
+        setError(data.error || 'Error al registrar')
         return
       }
 
@@ -59,7 +170,7 @@ export default function SorteoPage() {
       setMessages([
         {
           role: 'assistant',
-          content: `¡Hola ${formData.nombre}! Soy tu asistente de Soluciones Web. Cuéntame: ¿qué proceso de tu negocio te quita más tiempo o te gustaría mejorar? Te daré una propuesta de solución.`,
+          content: `¡Hola ${sanitizedData.nombre}! Soy tu asistente de Soluciones Web. Cuéntame: ¿qué proceso de tu negocio te quita más tiempo o te gustaría mejorar? Te daré una propuesta de solución.`,
         },
       ])
     } catch {
@@ -143,11 +254,10 @@ export default function SorteoPage() {
               {messages.map((msg, i) => (
                 <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                   <div
-                    className={`max-w-[80%] rounded-2xl px-4 py-3 ${
-                      msg.role === 'user'
+                    className={`max-w-[80%] rounded-2xl px-4 py-3 ${msg.role === 'user'
                         ? 'bg-blue-600 text-white'
                         : 'bg-gray-800 text-gray-100'
-                    }`}
+                      }`}
                   >
                     <p className="whitespace-pre-wrap">{msg.content}</p>
                   </div>
@@ -249,12 +359,19 @@ export default function SorteoPage() {
               <input
                 type="text"
                 id="nombre"
-                required
                 value={formData.nombre}
-                onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
-                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
-                placeholder="Tu nombre"
+                onChange={(e) => {
+                  setFormData({ ...formData, nombre: e.target.value })
+                  if (fieldErrors.nombre) setFieldErrors({ ...fieldErrors, nombre: '' })
+                }}
+                maxLength={100}
+                className={`w-full px-4 py-3 bg-gray-800 border rounded-lg text-white placeholder-gray-500 focus:outline-none transition-colors ${fieldErrors.nombre ? 'border-red-500 focus:border-red-500' : 'border-gray-700 focus:border-blue-500'
+                  }`}
+                placeholder="Juan Pérez"
               />
+              {fieldErrors.nombre && (
+                <p className="mt-1 text-sm text-red-400">{fieldErrors.nombre}</p>
+              )}
             </div>
 
             <div>
@@ -264,12 +381,19 @@ export default function SorteoPage() {
               <input
                 type="email"
                 id="email"
-                required
                 value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
+                onChange={(e) => {
+                  setFormData({ ...formData, email: e.target.value })
+                  if (fieldErrors.email) setFieldErrors({ ...fieldErrors, email: '' })
+                }}
+                maxLength={100}
+                className={`w-full px-4 py-3 bg-gray-800 border rounded-lg text-white placeholder-gray-500 focus:outline-none transition-colors ${fieldErrors.email ? 'border-red-500 focus:border-red-500' : 'border-gray-700 focus:border-blue-500'
+                  }`}
                 placeholder="tu@email.com"
               />
+              {fieldErrors.email && (
+                <p className="mt-1 text-sm text-red-400">{fieldErrors.email}</p>
+              )}
             </div>
 
             <div>
@@ -279,12 +403,19 @@ export default function SorteoPage() {
               <input
                 type="tel"
                 id="telefono"
-                required
                 value={formData.telefono}
-                onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
-                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
+                onChange={(e) => {
+                  setFormData({ ...formData, telefono: e.target.value })
+                  if (fieldErrors.telefono) setFieldErrors({ ...fieldErrors, telefono: '' })
+                }}
+                maxLength={20}
+                className={`w-full px-4 py-3 bg-gray-800 border rounded-lg text-white placeholder-gray-500 focus:outline-none transition-colors ${fieldErrors.telefono ? 'border-red-500 focus:border-red-500' : 'border-gray-700 focus:border-blue-500'
+                  }`}
                 placeholder="+1 234 567 8900"
               />
+              {fieldErrors.telefono && (
+                <p className="mt-1 text-sm text-red-400">{fieldErrors.telefono}</p>
+              )}
             </div>
 
             <div>
@@ -294,12 +425,19 @@ export default function SorteoPage() {
               <input
                 type="text"
                 id="nombreNegocio"
-                required
                 value={formData.nombreNegocio}
-                onChange={(e) => setFormData({ ...formData, nombreNegocio: e.target.value })}
-                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
-                placeholder="Mi Empresa"
+                onChange={(e) => {
+                  setFormData({ ...formData, nombreNegocio: e.target.value })
+                  if (fieldErrors.nombreNegocio) setFieldErrors({ ...fieldErrors, nombreNegocio: '' })
+                }}
+                maxLength={150}
+                className={`w-full px-4 py-3 bg-gray-800 border rounded-lg text-white placeholder-gray-500 focus:outline-none transition-colors ${fieldErrors.nombreNegocio ? 'border-red-500 focus:border-red-500' : 'border-gray-700 focus:border-blue-500'
+                  }`}
+                placeholder="Mi Empresa S.A."
               />
+              {fieldErrors.nombreNegocio && (
+                <p className="mt-1 text-sm text-red-400">{fieldErrors.nombreNegocio}</p>
+              )}
             </div>
 
             <div>
@@ -308,10 +446,13 @@ export default function SorteoPage() {
               </label>
               <select
                 id="presupuesto"
-                required
                 value={formData.presupuesto}
-                onChange={(e) => setFormData({ ...formData, presupuesto: e.target.value })}
-                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors"
+                onChange={(e) => {
+                  setFormData({ ...formData, presupuesto: e.target.value })
+                  if (fieldErrors.presupuesto) setFieldErrors({ ...fieldErrors, presupuesto: '' })
+                }}
+                className={`w-full px-4 py-3 bg-gray-800 border rounded-lg text-white focus:outline-none transition-colors ${fieldErrors.presupuesto ? 'border-red-500 focus:border-red-500' : 'border-gray-700 focus:border-blue-500'
+                  }`}
               >
                 <option value="">Selecciona un rango</option>
                 <option value="$500 - $1,000">$500 - $1,000</option>
@@ -320,6 +461,9 @@ export default function SorteoPage() {
                 <option value="$5,000 - $10,000">$5,000 - $10,000</option>
                 <option value="$10,000+">$10,000+</option>
               </select>
+              {fieldErrors.presupuesto && (
+                <p className="mt-1 text-sm text-red-400">{fieldErrors.presupuesto}</p>
+              )}
             </div>
 
             <div className="flex items-start gap-3">
