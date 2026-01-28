@@ -9,10 +9,12 @@
     "vercel-build": "rm -rf node_modules/.cache && next build"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.93.2",
     "@types/nodemailer": "^7.0.1",
     "gray-matter": "^4.0.3",
     "next": "15.5.9",
     "nodemailer": "^7.0.6",
+    "openai": "^6.16.0",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },

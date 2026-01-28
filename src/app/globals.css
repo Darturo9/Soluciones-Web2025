@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer utilities {
+  .animate-gradient {
+    animation: gradient 3s ease infinite;
+  }
+
   .animate-gradient-x {
     animation: gradient-x 3s ease infinite;
     background-size: 200% 200%;
@@ -22,6 +26,18 @@
 
   .animate-scale-in {
     animation: scale-in 0.4s ease-out forwards;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 

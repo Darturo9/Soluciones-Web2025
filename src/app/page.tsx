@@ -3,6 +3,24 @@
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-950">
+      {/* Sorteo Banner */}
+      <a
+        href="/sorteo"
+        className="block bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-[length:200%_100%] animate-gradient py-3 px-4 text-center relative overflow-hidden group"
+      >
+        <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+        <p className="text-white font-medium relative z-10">
+          <span className="inline-block animate-pulse mr-2">🎁</span>
+          <span className="font-bold">SORTEO ACTIVO:</span> Gana el desarrollo de tu sistema gratis
+          <span className="ml-2 inline-flex items-center">
+            Participar
+            <svg className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </span>
+        </p>
+      </a>
+
       {/* Hero Section */}
       <section className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-950 to-gray-950" />
