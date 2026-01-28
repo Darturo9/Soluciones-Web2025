@@ -9,6 +9,7 @@
     "vercel-build": "rm -rf node_modules/.cache && next build"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.8.0",
     "@supabase/supabase-js": "^2.93.2",
     "@types/nodemailer": "^7.0.1",
     "gray-matter": "^4.0.3",

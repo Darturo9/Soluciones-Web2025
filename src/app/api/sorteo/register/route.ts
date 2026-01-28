@@ -96,7 +96,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Enviar notificación a Telegram
-    sendTelegramNotification({ nombre, email, telefono, nombreNegocio, presupuesto })
+    await sendTelegramNotification({ nombre, email, telefono, nombreNegocio, presupuesto })
 
     return NextResponse.json({ success: true, id: data.id })
   } catch (error) {
