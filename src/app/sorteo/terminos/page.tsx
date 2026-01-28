@@ -36,8 +36,8 @@ export default function TerminosPage() {
             <h2 className="text-xl font-semibold text-white mb-3">4. Seleccion y Notificacion</h2>
             <ul className="list-disc list-inside space-y-2">
               <li>El ganador sera seleccionado de forma aleatoria entre los participantes validos.</li>
-              <li>El cierre de inscripciones sera el dia <strong className="text-white">28 de febrero de 2025</strong>.</li>
-              <li>El sorteo se realizara el dia <strong className="text-white">1 de marzo de 2025</strong> y se anunciara en los canales oficiales.</li>
+              <li>El cierre de inscripciones sera el dia <strong className="text-white">28 de febrero de 2026</strong>.</li>
+              <li>El sorteo se realizara el dia <strong className="text-white">1 de marzo de 2026</strong> y se anunciara en los canales oficiales.</li>
               <li>El ganador sera contactado por email/telefono. Si no responde en un plazo de 5 dias habiles, el premio se declarara desierto o se seleccionara un suplente, a discrecion del Organizador.</li>
             </ul>
           </section>
@@ -72,7 +72,7 @@ export default function TerminosPage() {
           </section>
 
           <div className="pt-6 border-t border-gray-800">
-            <p className="text-gray-500 text-sm">Ultima actualizacion: Enero 2025</p>
+            <p className="text-gray-500 text-sm">Ultima actualizacion: Enero 2026</p>
           </div>
         </div>
 
