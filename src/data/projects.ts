@@ -122,14 +122,14 @@ export const projects: Project[] = [
     year: 2024
   },
   {
-    id: '4',
-    slug: 'amoregt',
-    title: 'Amoregt',
-    client: 'Amoregt',
+    id: '5',
+    slug: 'limitless-marketing',
+    title: 'Limitless Marketing',
+    client: 'Limitless Marketing',
     shortDescription: 'Proyecto en desarrollo',
     description: 'Proyecto actualmente en desarrollo. Pronto revelaremos más detalles sobre esta colaboración.',
     category: 'website',
-    image: '/amorefoto.png',
+    image: '/Limitless marketing.png',
     technologies: [
       'Next.js',
       'React',
@@ -141,7 +141,53 @@ export const projects: Project[] = [
     ],
     results: [],
     link: '',
-    date: '2025-01',
+    date: '2025-02',
+    year: 2025
+  },
+  {
+    id: '6',
+    slug: 'flip-flop',
+    title: 'Flip Flop',
+    client: 'Flip Flop',
+    shortDescription: 'Proyecto en desarrollo',
+    description: 'Proyecto actualmente en desarrollo. Pronto revelaremos más detalles sobre esta colaboración.',
+    category: 'website',
+    image: '/flip flop.png',
+    technologies: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS'
+    ],
+    features: [
+      'En desarrollo'
+    ],
+    results: [],
+    link: '',
+    date: '2025-02',
+    year: 2025
+  },
+  {
+    id: '7',
+    slug: 'bbq-bros',
+    title: 'BBQ Bros',
+    client: 'BBQ Bros',
+    shortDescription: 'Proyecto en desarrollo',
+    description: 'Proyecto actualmente en desarrollo. Pronto revelaremos más detalles sobre esta colaboración.',
+    category: 'website',
+    image: '/bbq bros.png',
+    technologies: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS'
+    ],
+    features: [
+      'En desarrollo'
+    ],
+    results: [],
+    link: '',
+    date: '2025-02',
     year: 2025
   }
 ];
