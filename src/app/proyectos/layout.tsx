@@ -1,32 +1,39 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Portafolio de Proyectos Exitosos | Soluciones Web 2025',
-  description: 'Explora nuestro portafolio de proyectos web exitosos. Desarrollamos sitios web profesionales, tiendas online, aplicaciones y soluciones digitales personalizadas para empresas en Guatemala y Latinoamérica.',
+  title: 'Portafolio de Proyectos',
+  description: 'Portafolio de proyectos de desarrollo web y software personalizado. Sitios profesionales, sistemas a medida y automatizaciones para empresas en Guatemala.',
   keywords: [
-    'portafolio web',
+    'portafolio desarrollo web',
     'proyectos web Guatemala',
-    'desarrollo web profesional',
+    'casos de éxito software',
     'sitios web empresariales',
-    'e-commerce Guatemala',
-    'aplicaciones web',
-    'diseño web moderno',
-    'desarrollo Next.js',
-    'soluciones digitales',
-    'casos de éxito',
+    'desarrollo Next.js Guatemala',
+    'automatizaciones empresariales',
+    'sistemas personalizados',
   ],
-  authors: [{ name: 'Soluciones Web 2025' }],
+  alternates: {
+    canonical: 'https://www.solucionesweb-2025.com/proyectos',
+  },
   openGraph: {
-    title: 'Nuestros Proyectos | Soluciones Web 2025',
-    description: 'Transformando ideas en soluciones digitales exitosas. Conoce nuestros proyectos destacados.',
+    title: 'Portafolio de Proyectos | Soluciones Web',
+    description: 'Conoce nuestros proyectos de desarrollo web y software personalizado para empresas.',
+    url: 'https://www.solucionesweb-2025.com/proyectos',
     type: 'website',
-    locale: 'es_GT',
-    siteName: 'Soluciones Web 2025',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Proyectos de Soluciones Web',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Portafolio de Proyectos | Soluciones Web 2025',
-    description: 'Explora nuestros proyectos web exitosos y descubre cómo podemos ayudar a tu negocio.',
+    title: 'Portafolio de Proyectos | Soluciones Web',
+    description: 'Conoce nuestros proyectos de desarrollo web y software personalizado.',
+    images: ['/logo.png'],
   },
   robots: {
     index: true,

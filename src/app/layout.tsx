@@ -16,39 +16,63 @@ export const metadata: Metadata = {
     template: "%s | Soluciones Web"
   },
   description:
-    "Desarrollo de sistemas a medida, automatizaciones e integraciones para empresas. Software personalizado que transforma negocios.",
+    "Desarrollo de sistemas a medida, automatizaciones e integraciones para empresas en Guatemala. Software personalizado que transforma negocios con IA, APIs y automatizaciones inteligentes.",
   keywords: [
-    "desarrollo de software",
-    "automatizaciones",
+    "desarrollo de software Guatemala",
+    "automatizaciones empresariales",
     "sistemas a medida",
     "integraciones API",
-    "Next.js",
-    "Guatemala",
-    "desarrollo web profesional"
+    "desarrollo Next.js",
+    "chatbots IA",
+    "desarrollo web profesional Guatemala",
+    "software empresarial"
   ],
   authors: [{ name: "Soluciones Web" }],
   creator: "Soluciones Web",
   metadataBase: new URL("https://www.solucionesweb-2025.com"),
+  alternates: {
+    canonical: "https://www.solucionesweb-2025.com",
+  },
   openGraph: {
     type: "website",
     locale: "es_GT",
+    url: "https://www.solucionesweb-2025.com",
     siteName: "Soluciones Web",
     title: "Soluciones Web | Desarrollo de Software y Automatizaciones",
-    description: "Desarrollo de sistemas a medida, automatizaciones e integraciones para empresas.",
+    description: "Desarrollo de sistemas a medida, automatizaciones e integraciones para empresas en Guatemala.",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Soluciones Web - Desarrollo de Software",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Soluciones Web | Desarrollo de Software y Automatizaciones",
     description: "Desarrollo de sistemas a medida, automatizaciones e integraciones para empresas.",
+    images: ["/logo.png"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   icons: {
     icon: '/logo.svg',
     shortcut: '/logo.svg',
     apple: '/logo.png',
+  },
+  verification: {
+    google: 'sWnlHzvLkaDBzaEAtYE7aktVt8UZaHdU7nCx1wbw_bA',
   },
 };
 
@@ -61,6 +85,8 @@ const jsonLd = {
   description: 'Desarrollo de sistemas a medida, automatizaciones e integraciones para empresas.',
   address: {
     '@type': 'PostalAddress',
+    addressLocality: 'Ciudad de Guatemala',
+    addressRegion: 'Guatemala',
     addressCountry: 'GT',
   },
   sameAs: [
@@ -69,7 +95,13 @@ const jsonLd = {
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer service',
-    availableLanguage: ['Spanish'],
+    availableLanguage: ['Spanish', 'English'],
+    areaServed: 'GT',
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    reviewCount: '12',
   },
   offers: {
     '@type': 'AggregateOffer',

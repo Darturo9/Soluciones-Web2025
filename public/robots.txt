@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://soluciones-web.vercel.app/sitemap.xml
+Sitemap: https://www.solucionesweb-2025.com/sitemap.xml
