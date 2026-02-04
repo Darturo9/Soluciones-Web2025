@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsappButton";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 
@@ -150,6 +151,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} antialiased bg-white dark:bg-gray-900 transition-colors duration-300`}>
         <Header />
+        <Breadcrumbs />
         <main>{children}</main>
         <Footer />
         <WhatsAppButton />

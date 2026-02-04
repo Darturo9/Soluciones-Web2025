@@ -1,5 +1,30 @@
 'use client';
 
+import FAQSchema from '@/components/FAQSchema';
+
+const faqs = [
+    {
+        question: '¿Qué diferencia hay entre un sitio web y un sistema a medida?',
+        answer: 'Un sitio web es principalmente informativo y de presentación. Un sistema a medida es una aplicación que se integra con tus procesos de negocio, automatiza tareas, gestiona datos y se conecta con tus herramientas existentes. Está diseñado específicamente para resolver problemas únicos de tu empresa.'
+    },
+    {
+        question: '¿Cuánto tiempo toma desarrollar una automatización?',
+        answer: 'Las automatizaciones simples pueden estar listas en 1-2 semanas. Proyectos más complejos que involucran múltiples sistemas y lógica avanzada pueden tomar 4-8 semanas. Trabajamos con entregas parciales para que empieces a ver resultados rápidamente.'
+    },
+    {
+        question: '¿Pueden integrar mis sistemas actuales?',
+        answer: 'Sí. Nos especializamos en conectar sistemas que no fueron diseñados para trabajar juntos. Ya sea que uses un CRM, ERP, plataforma de e-commerce, o herramientas personalizadas, podemos crear integraciones mediante APIs, webhooks o automatizaciones.'
+    },
+    {
+        question: '¿Necesito conocimientos técnicos para usar los sistemas?',
+        answer: 'No. Diseñamos interfaces intuitivas y proporcionamos capacitación para tu equipo. Los sistemas están diseñados para que personas sin conocimientos técnicos puedan operarlos fácilmente.'
+    },
+    {
+        question: '¿Qué pasa si necesito cambios después del lanzamiento?',
+        answer: 'Ofrecemos soporte y mantenimiento continuo. Los sistemas evolucionan con tu negocio, y estamos disponibles para implementar mejoras, nuevas funcionalidades o ajustes según tus necesidades cambien.'
+    },
+];
+
 export default function Servicios() {
     return (
         <div className="min-h-screen bg-gray-950">
@@ -280,6 +305,39 @@ export default function Servicios() {
                                 <span className="text-5xl font-bold text-gray-800">{step.num}</span>
                                 <h3 className="text-lg font-semibold text-white mt-4 mb-2">{step.title}</h3>
                                 <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* FAQ Schema */}
+            <FAQSchema faqs={faqs} />
+
+            {/* FAQ Section */}
+            <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
+                <div className="max-w-4xl mx-auto">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl font-bold text-white mb-4">
+                            Preguntas Frecuentes
+                        </h2>
+                        <p className="text-gray-400">
+                            Respuestas a las dudas más comunes sobre nuestros servicios
+                        </p>
+                    </div>
+
+                    <div className="space-y-6">
+                        {faqs.map((faq, index) => (
+                            <div
+                                key={index}
+                                className="bg-gray-900/50 rounded-xl p-6 border border-gray-800"
+                            >
+                                <h3 className="text-lg font-semibold text-white mb-3">
+                                    {faq.question}
+                                </h3>
+                                <p className="text-gray-400 leading-relaxed">
+                                    {faq.answer}
+                                </p>
                             </div>
                         ))}
                     </div>
