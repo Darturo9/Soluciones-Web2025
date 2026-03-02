@@ -35,6 +35,39 @@ export const projects: Project[] = [
     year: 2026
   },
   {
+    id: '8',
+    slug: 'power-boxing',
+    title: 'Power Boxing',
+    client: 'Power Boxing by El Flaco Pesado',
+    shortDescription: 'Landing page de alto impacto para clases de boxeo en zona 18, enfocada en reservas rapidas por WhatsApp y formulario.',
+    description: 'Desarrollamos una landing page moderna para Power Boxing que comunica su propuesta de valor, horarios, ubicacion y programas de entrenamiento con un enfoque claro en conversion y contacto inmediato.',
+    category: 'website',
+    image: '/powerboxing.webp',
+    technologies: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'SEO Tecnico'
+    ],
+    features: [
+      'Hero de alto impacto con CTA principal a WhatsApp',
+      'Secciones de servicios, beneficios, horarios y ubicacion',
+      'Formulario rapido conectado a flujo de contacto comercial',
+      'Integracion con Google Maps para facilitar llegada al gimnasio',
+      'Diseno responsivo optimizado para mobile y desktop'
+    ],
+    results: [
+      'Presencia digital profesional para la marca Power Boxing',
+      'Mejor claridad de oferta, horarios y ubicacion para nuevos alumnos',
+      'Ruta de conversion corta hacia WhatsApp y formulario',
+      'Landing lista para campanas de trafico en redes sociales'
+    ],
+    link: 'https://powerboxing.fit',
+    date: '2026-03',
+    year: 2026
+  },
+  {
     id: '1',
     slug: 'snack-bar-k-p',
     title: 'Snack Bar K&P',
