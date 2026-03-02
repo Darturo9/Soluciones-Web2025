@@ -2,6 +2,39 @@ import { Project } from '@/types/project';
 
 export const projects: Project[] = [
   {
+    id: '5',
+    slug: 'limitless-marketing',
+    title: 'Limitless Marketing',
+    client: 'Limitless Marketing',
+    shortDescription: 'Sitio web corporativo para agencia de marketing digital en Guatemala, enfocado en captacion de leads y posicionamiento de servicios.',
+    description: 'Desarrollamos el sitio web de Limitless Marketing para presentar su propuesta de valor, servicios de marketing digital y credenciales profesionales en un formato moderno, rapido y orientado a conversion.',
+    category: 'website',
+    image: '/Limitless marketing.png',
+    technologies: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'SEO Tecnico'
+    ],
+    features: [
+      'Arquitectura one-page con secciones de servicios, credenciales y contacto',
+      'SEO on-page con metadatos Open Graph y Schema Markup',
+      'Diseno responsivo optimizado para mobile y desktop',
+      'Seccion de certificaciones (Google, Meta, LinkedIn y HubSpot)',
+      'CTA estrategicos orientados a generar conversaciones comerciales'
+    ],
+    results: [
+      'Presencia digital profesional alineada a su marca',
+      'Comunicacion clara de servicios y diferenciadores',
+      'Mejor base para captacion de leads desde trafico organico y social',
+      'Sitio rapido y estable para campanas de marketing'
+    ],
+    link: 'https://www.limitlessmarketing502.com/',
+    date: '2026-03',
+    year: 2026
+  },
+  {
     id: '1',
     slug: 'snack-bar-k-p',
     title: 'Snack Bar K&P',
@@ -120,29 +153,6 @@ export const projects: Project[] = [
     link: 'https://eventoscelebrarte.com',
     date: '2024-11',
     year: 2024
-  },
-  {
-    id: '5',
-    slug: 'limitless-marketing',
-    title: 'Limitless Marketing',
-    client: 'Limitless Marketing',
-    shortDescription: 'Proyecto en desarrollo',
-    description: 'Proyecto actualmente en desarrollo. Pronto revelaremos más detalles sobre esta colaboración.',
-    category: 'website',
-    image: '/Limitless marketing.png',
-    technologies: [
-      'Next.js',
-      'React',
-      'TypeScript',
-      'Tailwind CSS'
-    ],
-    features: [
-      'En desarrollo'
-    ],
-    results: [],
-    link: '',
-    date: '2025-02',
-    year: 2025
   },
   {
     id: '6',
