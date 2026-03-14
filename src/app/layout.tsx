@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -10,51 +10,59 @@ import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk" });
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#030712',
+};
 
 export const metadata: Metadata = {
   title: {
-    default: "Soluciones Web | Desarrollo de Software y Automatizaciones",
+    default: "Soluciones Web | Más clientes para tu negocio en Guatemala",
     template: "%s | Soluciones Web"
   },
   description:
-    "Desarrollo de sistemas a medida, automatizaciones e integraciones para empresas en Guatemala. Software personalizado que transforma negocios con IA, APIs y automatizaciones inteligentes.",
+    "Ayudo a restaurantes, tiendas, clínicas y gimnasios en Guatemala a conseguir más clientes por internet. Páginas web profesionales, respuestas automáticas y presencia en Google. Sin tecnicismos.",
   keywords: [
-    "desarrollo de software Guatemala",
-    "automatizaciones empresariales",
-    "sistemas a medida",
-    "integraciones API",
-    "desarrollo Next.js",
-    "chatbots IA",
-    "desarrollo web profesional Guatemala",
-    "software empresarial"
+    "página web para negocios Guatemala",
+    "más clientes por internet Guatemala",
+    "página web restaurante Guatemala",
+    "presencia en Google Guatemala",
+    "página web gimnasio Guatemala",
+    "desarrollo web Guatemala",
+    "página web profesional Guatemala",
+    "conseguir clientes por WhatsApp"
   ],
   authors: [{ name: "Soluciones Web" }],
   creator: "Soluciones Web",
   metadataBase: new URL("https://www.solucionesweb-2025.com"),
   alternates: {
-    canonical: "https://www.solucionesweb-2025.com",
+    canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "es_GT",
     url: "https://www.solucionesweb-2025.com",
     siteName: "Soluciones Web",
-    title: "Soluciones Web | Desarrollo de Software y Automatizaciones",
-    description: "Desarrollo de sistemas a medida, automatizaciones e integraciones para empresas en Guatemala.",
+    title: "Soluciones Web | Más clientes para tu negocio en Guatemala",
+    description: "Ayudo a restaurantes, tiendas, clínicas y gimnasios en Guatemala a conseguir más clientes por internet. Sin que tengas que saber nada de tecnología.",
     images: [
       {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "Soluciones Web - Desarrollo de Software",
+        alt: "Soluciones Web - Más clientes para tu negocio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Soluciones Web | Desarrollo de Software y Automatizaciones",
-    description: "Desarrollo de sistemas a medida, automatizaciones e integraciones para empresas.",
+    title: "Soluciones Web | Más clientes para tu negocio en Guatemala",
+    description: "Ayudo a restaurantes, tiendas, clínicas y gimnasios en Guatemala a conseguir más clientes por internet.",
     images: ["/logo.png"],
   },
   robots: {
@@ -80,11 +88,11 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
+  '@type': 'LocalBusiness',
   name: 'Soluciones Web',
   url: 'https://www.solucionesweb-2025.com',
   logo: 'https://www.solucionesweb-2025.com/logo.png',
-  description: 'Desarrollo de sistemas a medida, automatizaciones e integraciones para empresas.',
+  description: 'Ayudo a restaurantes, tiendas, clinicas y gimnasios en Guatemala a conseguir mas clientes por internet.',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Ciudad de Guatemala',
@@ -97,37 +105,45 @@ const jsonLd = {
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer service',
-    availableLanguage: ['Spanish', 'English'],
+    telephone: '+502-5558-0173',
+    availableLanguage: ['Spanish'],
     areaServed: 'GT',
   },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5',
-    reviewCount: '12',
-  },
-  offers: {
-    '@type': 'AggregateOffer',
-    offerCount: 4,
-    itemOffered: [
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Servicios para negocios locales',
+    itemListElement: [
       {
-        '@type': 'Service',
-        name: 'Automatizacion de Procesos',
-        description: 'Elimina tareas repetitivas y reduce errores humanos con flujos de trabajo automatizados.',
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Pagina web para negocios',
+          description: 'Pagina profesional para que tus clientes te encuentren en Google y escriban por WhatsApp.',
+        },
       },
       {
-        '@type': 'Service',
-        name: 'Sistemas a Medida',
-        description: 'Aplicaciones web y moviles disenadas especificamente para las necesidades de tu negocio.',
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Respuestas automaticas',
+          description: 'Mensajes automaticos, citas y recordatorios sin estar pegado al celular todo el dia.',
+        },
       },
       {
-        '@type': 'Service',
-        name: 'APIs e Integraciones',
-        description: 'Conecta tus sistemas existentes y crea flujos de datos entre plataformas.',
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Atencion 24 horas',
+          description: 'Asistente que responde preguntas y toma datos de clientes de noche y fin de semana.',
+        },
       },
       {
-        '@type': 'Service',
-        name: 'IA y Procesamiento de Datos',
-        description: 'Chatbots inteligentes, analisis de datos y automatizaciones con inteligencia artificial.',
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Herramienta a medida',
+          description: 'Solucion creada especificamente para como funciona tu restaurante, tienda o clinica.',
+        },
       },
     ],
   },
@@ -157,12 +173,21 @@ export default function RootLayout({
             gtag('config', 'G-D2KNQQWV7B');
           `}
         </Script>
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "vvrd77y1pd");
+          `}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${inter.className} antialiased bg-white dark:bg-gray-900 transition-colors duration-300`}>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased bg-[#030712]`}>
         <Header />
         <Breadcrumbs />
         <main>{children}</main>

@@ -2,106 +2,106 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
+const WHATSAPP_URL =
+  'https://wa.me/50255580173?text=Hola%2C%20vi%20tu%20p%C3%A1gina%20y%20me%20interesa%20hablar%20sobre%20mi%20proyecto';
+
+const navLinks = [
+  { label: 'Servicios', href: '/#servicios' },
+  { label: 'Proyectos', href: '/#proyectos' },
+  { label: 'Testimonios', href: '/#testimonios' },
+];
+
 export default function Header() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    return (
-        <header className="bg-gray-950/95 backdrop-blur-md border-b border-gray-800 sticky top-0 z-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center py-4">
-                    {/* Logo */}
-                    <a href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-                        <Image
-                            src="/logo.png"
-                            alt="Soluciones Web Logo"
-                            width={40}
-                            height={40}
-                            className="rounded-lg"
-                        />
-                        <span className="text-xl sm:text-2xl font-bold text-white">
-                            Soluciones Web
-                        </span>
-                    </a>
+  return (
+    <header className="bg-[#030712]/95 backdrop-blur-md border-b border-[#0f1f38] sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div className="flex justify-between items-center py-4">
 
-                    {/* Desktop Menu */}
-                    <nav className="hidden md:flex space-x-6">
-                        <a href="/" className="text-gray-400 hover:text-white transition-colors font-medium">
-                            Inicio
-                        </a>
-                        <a href="/servicios" className="text-gray-400 hover:text-white transition-colors font-medium">
-                            Servicios
-                        </a>
-                        <a href="/proyectos" className="text-gray-400 hover:text-white transition-colors font-medium">
-                            Proyectos
-                        </a>
-                        <a href="/blog" className="text-gray-400 hover:text-white transition-colors font-medium">
-                            Blog
-                        </a>
-                        <a href="/contenido" className="text-gray-400 hover:text-white transition-colors font-medium">
-                            Videos
-                        </a>
-                        <a href="/contacto" className="text-gray-400 hover:text-white transition-colors font-medium">
-                            Contacto
-                        </a>
-                    </nav>
+          {/* Logo */}
+          <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <Image
+              src="/logo.png"
+              alt="Soluciones Web Logo"
+              width={36}
+              height={36}
+              className="rounded-lg"
+            />
+            <span className="font-space-grotesk text-xl font-bold text-white">
+              Soluciones Web
+            </span>
+          </a>
 
-                    {/* Desktop Button */}
-                    <a
-                        href="/contacto"
-                        className="hidden md:block bg-white text-gray-900 px-4 lg:px-6 py-2 rounded-lg hover:bg-gray-100 transition-colors font-medium text-sm lg:text-base"
-                    >
-                        Iniciar Proyecto
-                    </a>
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-[#64748b] hover:text-white transition-colors text-sm font-medium"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
 
-                    {/* Mobile menu button */}
-                    <button
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="md:hidden p-2 rounded-md text-gray-400"
-                        aria-label={isMenuOpen ? "Cerrar menu" : "Abrir menu"}
-                        aria-expanded={isMenuOpen}
-                    >
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            {isMenuOpen ? (
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                            ) : (
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                            )}
-                        </svg>
-                    </button>
-                </div>
+          {/* Desktop CTA */}
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex items-center gap-2 bg-[#60a5fa] hover:bg-[#93c5fd] text-white font-bold text-sm px-5 py-2.5 rounded-lg transition-all duration-200 hover:shadow-[0_0_20px_rgba(96,165,250,0.4)]"
+          >
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+            </svg>
+            WhatsApp
+          </a>
 
-                {/* Mobile Menu */}
-                {isMenuOpen && (
-                    <div className="md:hidden py-4 border-t border-gray-800">
-                        <nav className="flex flex-col space-y-4">
-                            <a href="/" className="text-gray-400 hover:text-white transition-colors font-medium">
-                                Inicio
-                            </a>
-                            <a href="/servicios" className="text-gray-400 hover:text-white transition-colors font-medium">
-                                Servicios
-                            </a>
-                            <a href="/proyectos" className="text-gray-400 hover:text-white transition-colors font-medium">
-                                Proyectos
-                            </a>
-                            <a href="/blog" className="text-gray-400 hover:text-white transition-colors font-medium">
-                                Blog
-                            </a>
-                            <a href="/contenido" className="text-gray-400 hover:text-white transition-colors font-medium">
-                                Videos
-                            </a>
-                            <a href="/contacto" className="text-gray-400 hover:text-white transition-colors font-medium">
-                                Contacto
-                            </a>
-                            <a
-                                href="/contacto"
-                                className="bg-white text-gray-900 px-6 py-2 rounded-lg hover:bg-gray-100 transition-colors font-medium text-center"
-                            >
-                                Iniciar Proyecto
-                            </a>
-                        </nav>
-                    </div>
-                )}
-            </div>
-        </header>
-    );
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden p-2 text-[#64748b] hover:text-white transition-colors"
+            aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={isMenuOpen}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {isMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden py-6 border-t border-[#0f1f38]">
+            <nav className="flex flex-col gap-5">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-[#64748b] hover:text-white transition-colors font-medium"
+                >
+                  {link.label}
+                </a>
+              ))}
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-[#60a5fa] hover:bg-[#93c5fd] text-white font-bold text-sm px-5 py-3 rounded-lg transition-colors mt-2"
+              >
+                Escribir por WhatsApp
+              </a>
+            </nav>
+          </div>
+        )}
+      </div>
+    </header>
+  );
 }
